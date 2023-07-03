@@ -46,6 +46,7 @@ public class MappingController {
      *
      * @PathVariable("userId") String userId -> @PathVariable userId
      */
+
     @GetMapping("/mapping/{userId}")
     public String mappingPath(@PathVariable("userId") String data) {
         log.info("mappingPath userId={}", data);
@@ -55,6 +56,7 @@ public class MappingController {
     /**
      * PathVariable 사용 다중
      */
+
     @GetMapping("/mapping/users/{userId}/orders/{orderId}")
     public String mappingPath(@PathVariable String userId, @PathVariable Long
             orderId) {
@@ -70,6 +72,7 @@ public class MappingController {
      * params="mode!=debug" (! = )
      * params = {"mode=debug","data=good"}
      */
+
     @GetMapping(value = "/mapping-param", params = "mode=debug")
     public String mappingParam() {
         log.info("mappingParam");
@@ -83,6 +86,7 @@ public class MappingController {
      * headers="mode=debug"
      * headers="mode!=debug" (! = )
      */
+
     @GetMapping(value = "/mapping-header", headers = "mode=debug")
     public String mappingHeader() {
         log.info("mappingHeader");
@@ -97,6 +101,7 @@ public class MappingController {
      * consumes="*\/*"
      * MediaType.APPLICATION_JSON_VALUE
      */
+
     @PostMapping(value = "/mapping-consume", consumes = "application/json")
     public String mappingConsumes() {
         log.info("mappingConsumes");
@@ -110,6 +115,7 @@ public class MappingController {
      * produces = "text/*"
      * produces = "*\/*"
      */
+
     @PostMapping(value = "/mapping-produce", produces = "text/html")
     public String mappingProduces() {
         log.info("mappingProduces");
